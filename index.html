@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="">
+	<head>
+		<!-- META -->
+		<meta charset="UTF-8"/>
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+		<meta http-equiv="Content-Style-Type" content="text/css" />
+		<meta http-equiv="Content-Script-Type" content="text/javascript"/>
+		<meta name="keywords" content=""/>
+		<meta name="description" content=""/>
+		<meta name="autor" content=""/>
+		<meta name="copyright" content=""/>
+		<meta name="generator" content=""/>
+		<meta name="distribution" content=""/>
+		<meta name="date" content=""/>
+		<!-- SCRIPTS -->
+		<script src="js/jquery-1.11.3.min.js" type="text/javascript"></script>
+		<script src="js/jquery-ui-1.10.4.custom.min.js" type="text/javascript"></script>
+		<script src="js/bootstrap.min.js" type="text/javascript"></script>
+		<!-- STYLE -->
+		<link rel="stylesheet" type="text/css" href="css/style.css"/>
+		<title>{pagetitle}</title>
+		<!-- LINK -->
+		<link rel="shortcut icon" type="image/png" href="img/ico/favicon.png"/>
+		<!-- PLUGINS -->
+		<script src="plugins/smooth-page-scroll-to-top/smooth_scroll.js" type="text/javascript"></script>
+		<link rel="stylesheet" type="text/css" href="plugins/smooth-page-scroll-to-top/smooth_scroll.css"/>
+		<link rel="stylesheet" type="text/css" href="plugins/font-awesome-4.5.0/css/font-awesome.min.css"/>
+		<link rel="stylesheet" type="text/css" href="plugins/animate/animate.min.css"/>
+		<script src="plugins/pace/pace.js" type="text/javascript"></script>
+		<script src="plugins/smooth-mouse-scrolling-scrollspeed/jQuery.scrollSpeed.js" type="text/javascript"></script>
+	</head>
+	<body>
+		<!-- -->
+		<div class="container-fluid">
+			<div class="container">
+				<div class="row">
+					<div class="col-md-offset-3 col-md-6">
+						<h4>Password Generator</h4>
+						<p>
+							94 ASCII chars 
+							- 
+							abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789!@#$%^&*()-_+=~`[]{}|\:;"'<>,.?/
+						</p>
+						<hr>
+						<form class="form" name="register" id="register" accept-charset="UTF-8" action="" method="post" enctype="multipart/form-data" role="form">
+							<div class="form-group">
+								<div class="input-group">
+									<div class="input-group-addon">
+										<span class="glyphicon glyphicon-transfer"></span>
+									</div>
+									<input class="form-control" type="text" name="pass_length" id="pass_length" placeholder="Password Length (default 8, recommended between 12 and 18)">
+								</div>
+							</div>
+							<div class="form-group">
+								<div class="input-group">
+									<div class="input-group-addon">
+										<span class="glyphicon glyphicon-lock"></span>
+									</div>
+									<input class="form-control" type="text" id="pass" name="pass" placeholder="Password">
+									<span class="input-group-btn">
+										<button class="btn btn-default" type="button"  id="pass_refresh">
+											<span class="glyphicon glyphicon-refresh"></span>
+										</button>
+										<!--
+										<button class="btn btn-default" type="button" id="pass_ok">
+											<span class="glyphicon glyphicon-ok"></span>
+										</button>
+										-->
+										<button class="btn btn-default" type="button" id="pass_copy">
+											<span class="glyphicon glyphicon-copy"></span>
+										</button>
+										<button class="btn btn-default" type="button" id="pass_remove">
+											<span class="glyphicon glyphicon-remove"></span>
+										</button> </span>
+								</div>
+								<div class="progress progress-striped active">
+									<div id="jak_pstrength" class="progress-bar" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" style="width: 0%;"></div>
+								</div>
+							</div>
+							<!--
+							<div class="form-group">
+								<div class="input-group">
+									<div class="input-group-addon">
+										<span class="glyphicon glyphicon-lock"></span>
+									</div>
+									<input class="form-control" type="password" id="cpass" name="cpass" placeholder="Retype Password">
+								</div>
+							</div>
+							-->
+							<h4>Brute Force Attack Calculator</h4>
+							<hr/>
+							<div class="form-group">
+								<label class="col-sm-3 control-label">Combinations</label>
+								<div class="col-sm-9">
+									<p class="form-control-static" id="combinations">
+										0
+									</p>
+								</div>
+							</div>
+							<div class="form-group">
+								<label class="col-sm-3 control-label">Cracking Time</label>
+								<div class="col-sm-9">
+									<p class="form-control-static" id="time">
+										0
+									</p>
+								</div>
+							</div>
+							<div class="form-group">
+								<label class="col-sm-3 control-label">Binary</label>
+								<div class="col-sm-9">
+									<p class="form-control-static" id="binary">
+										0
+									</p>
+								</div>
+							</div>
+							<div class="form-group">
+								<label class="col-sm-3 control-label">Hexadecimal</label>
+								<div class="col-sm-9">
+									<p class="form-control-static" id="hex">
+										0
+									</p>
+								</div>
+							</div>
+							<div class="form-group">
+								<button type="button" id="calc" class="btn btn-default">
+									Calculate
+								</button>
+							</div>
+						</form>
+					</div>
+
+				</div>
+			</div>
+		</div>
+		<div class="container-fluid">
+				<div class="row">
+					<div class="col-md-offset-1 col-md-10">
+						<h4>Hashing algorithm</h4>
+						<hr/>
+						<div id="hash"></div>
+					</div>
+				</div>
+		</div>
+		<!-- <a href="#" class="scrollup">Scroll</a> -->
+		<!-- SCRIPTS -->
+		<script language="javascript" src="js/app.js"></script>
+		<script language="javascript">
+			$(document).ready(function() {
+
+			});
+		</script>
+	</body>
+</html>

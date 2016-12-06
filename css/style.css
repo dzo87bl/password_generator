@@ -1,0 +1,215 @@
+@charset "UTF-8";
+
+/* Table of Contents
+ ==================================================
+ # Imports
+ # Fonts
+ # All
+ # HTML
+ # Body
+ # Grid
+ # Header
+ # Nav
+ # Main
+ # Aside
+ # Footer
+ # Typography
+ # Components
+ # Form
+ # Helpers
+ # Apps
+ # Animations
+ # Responsive
+ # Print
+ ==================================================
+ */
+
+/************************* IMPORT *************************/
+
+@import url();
+
+@import url(bootstrap.min.css);
+@import url(bootstrap-theme.min.css);
+@import url(jquery-ui-1.10.4.custom.min.css);
+
+@import url(https://fonts.googleapis.com/css?family=Ubuntu+Mono:400,400italic,700,700italic&subset=greek,greek-ext,latin,cyrillic-ext,latin-ext,cyrillic);
+
+/************************* FONT *************************/
+
+@font-face {  }
+
+/************************* ALL *************************/
+
+* {  }
+
+/************************* HTML *************************/
+
+html {
+	
+}
+
+/* selection */
+
+::selection {  }
+::-moz-selection {  }
+
+/************************* BODY *************************/
+
+body {
+	font-family: 'Ubuntu Mono';
+	font-size: 16px;
+}
+
+/************************* GRID *************************/
+
+.container-fluid {
+	
+}
+
+.container {
+	
+}
+
+/************************* HEADER *************************/
+
+/************************* NAV *************************/
+
+/************************* MAIN *************************/
+
+/************************* ASIDE *************************/
+
+/************************* FOOTER *************************/
+
+/************************* TYPOGRAPHY *************************/
+
+/************************* COMPONENTS *************************/
+
+.btn, .form-control,
+.input-group-addon,
+.nav-tabs > li > a,
+.modal-content, .panel {
+    border-radius: 0px;
+}
+
+/************************* FORM *************************/
+
+/* form */
+
+#login {
+	color: rgb(153,153,153);
+	max-height: 150px;
+}
+
+/* btn */
+
+.btn-default {
+	background-color: #fff;
+	background-image: none;
+}
+
+.navbar-btn {
+	color: rgba(255, 255, 255, 0.7);
+	background-color: rgba(255, 255, 255, 0.3);
+	border-color: rgba(255, 255, 255, 0.1);
+	margin: 12px 8px;
+	padding: 1px 12px;
+	border-radius: 8px;
+	text-shadow: none;
+	transition: all 200ms ease-in-out 0s;
+}
+
+.navbar-btn:hover,
+.navbar-btn:focus,
+.navbar-btn:active,
+.open > .dropdown-toggle .navbar-btn {
+	color: rgba(255, 255, 255, 0.8);
+	background-color: rgba(255, 255, 255, 0.5);
+	border-color: rgba(255, 255, 255, 0.1);
+}
+
+#login-trigger .navbar-btn,
+#register-trigger .navbar-btn {
+	margin: 12px 1px;
+}
+
+#login-trigger .navbar-btn {
+	border-bottom-right-radius: 0px;
+	border-top-right-radius: 0px;
+}
+
+#register-trigger .navbar-btn {
+	background-color: rgba(211,34,0,0.5);
+	background-image: none;
+	border-color: rgba(211,34,0,0.1);
+	box-shadow: none;
+	border-bottom-left-radius: 0px;
+	border-top-left-radius: 0px;
+}
+
+#login-btn {
+	margin-top: 8px;
+}
+
+/* form-control */
+
+.form-control:focus {
+    border-color: #ccc;
+    outline: 0;
+    box-shadow: none;
+}
+
+/* progress */
+
+.progress {
+    height: 5px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    border-radius: 0px;
+}
+
+/* form-control-static */
+
+.form-control-static {
+	padding-top: 0px;
+}
+
+/* placeholders */
+
+::-webkit-input-placeholder {  }
+::-moz-placeholder {  }
+:-ms-input-placeholder {  }
+input:-moz-placeholder {  }
+
+/************************* HELPERS *************************/
+
+/************************* APPS *************************/
+
+/* pace */
+
+.pace {
+	-webkit-pointer-events: none;
+	pointer-events: none;
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	user-select: none;
+}
+
+.pace-inactive {
+	display: none;
+}
+
+.pace .pace-progress {
+	background: #29d;
+	position: fixed;
+	z-index: 2000;
+	top: 0;
+	right: 100%;
+	width: 100%;
+	height: 2px;
+}
+
+/************************* ANIMATIONS *************************/
+
+/************************* RESPONSIVE *************************/
+
+/************************* PRINT *************************/
