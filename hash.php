@@ -6,12 +6,15 @@
 	}*/
 
 	/* error reporting */
-	error_reporting(E_ALL);
-	ini_set('display_errors', 0);
+	error_reporting( E_ALL );
+	ini_set( 'display_errors', 0 );
 
 	/* headers */
-	header("Cache-Control: no-cache, must-revalidate");
-	header("Expires: Mon, 26 Jul 1997 05:00:00 GMT");
+	header( "Cache-Control: no-cache, must-revalidate" );
+	header( "Expires: Mon, 26 Jul 1997 05:00:00 GMT" );
+	
+	/* config */
+	set_time_limit( 120 );
 	
 	/* get the q parameter from URL */
 	$q = $_GET["q"];
@@ -21,20 +24,20 @@
 	$error = 0;
 	
 	/* action */
-	foreach (hash_algos() as $v) { 
-        $r = hash($v, $q, false); 
+	foreach ( hash_algos() as $v ) { 
+        $r = hash( $v, $q, false ); 
         //printf("%-12s %3d %s\n", $v, strlen($r), $r);
 		$info .= sprintf(
-		'<div class="form-group">
-			<label class="col-sm-2 control-label">%-12s</label>
-			<div class="col-sm-1">
-				%3d
-			</div>
-			<div class="col-sm-9">
-				<p class="form-control-static">%s</p>
-			</div>
-		</div>', 
-		$v, strlen($r), $r
+			'<div class="form-group">
+				<label class="col-sm-2 control-label">%-12s</label>
+				<div class="col-sm-1">
+					%3d
+				</div>
+				<div class="col-sm-9">
+					<p class="form-control-static">%s</p>
+				</div>
+			</div>', 
+			$v, strlen( $r ), $r
 		);
 	}
 	
@@ -51,6 +54,6 @@
 		'info' => $info,
 		'error' => $error,
 	);   
-	echo json_encode($ret);
+	echo json_encode( $ret );
 
 ?>
